@@ -1,0 +1,7 @@
+{
+  "name": "flask-grunt",
+  "version": "0.1.0",
+  "dependencies": {
+    "jquery": null
+  }
+}
