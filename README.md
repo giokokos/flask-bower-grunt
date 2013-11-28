@@ -8,7 +8,7 @@ You need to have nodeJS, npm, Grunt, Bower and Git installed on the system befor
 
   	`$ cd <repo>`
 
-  	`$ virtual venv`
+  	`$ virtualenv venv`
 
   	`$ source venv/bin/activate`
 
@@ -22,6 +22,8 @@ Enjoy!
 
 ## Documentation
 
-  Flask needs a development server to run in order to serve the application. To do so, run `$ python server.py`. And to make Grunt work, run (in a separate terminal tab) `$ grunt`. Your application will be available at `127.0.0.1:5000`.
+  Make Grunt work, run `$ grunt` to execute the default tasks. 
+  Grunt tasks: Copy the `jQuery.js` from `bower_components` to `static/dev/js` and create a `static/build/js/all.min.js` file with the minified version of JS files. 
+  Flask needs a development server to run in order to serve the application. To do so, run `$ python server.py`. Your application will be available at `127.0.0.1:5000`.
 
-  Grunt tasks: Copy the `jQuery.js` from `bower_components` to `static/dev/js` and create a `static/build/js/all.min.js` file with the minified version of JS files.
+  
