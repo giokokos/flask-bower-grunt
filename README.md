@@ -4,13 +4,19 @@
 
 You need to have nodeJS, npm, Grunt, Bower and Git installed on the system before you proceed:
 
-  `$ git clone <repo>`
-  `$ cd <repo>`
-  `$ virtual venv`
-  `$ source venv/bin/activate`
-  `$ pip install -r requirements.txt`
-  `$ npm install`
-  `$ bower install`
+  	`$ git clone <repo>`
+
+  	`$ cd <repo>`
+
+  	`$ virtual venv`
+
+  	`$ source venv/bin/activate`
+
+  	`$ pip install -r requirements.txt`
+
+  	`$ npm install`
+  	
+  	`$ bower install`
 
 Enjoy!
 
