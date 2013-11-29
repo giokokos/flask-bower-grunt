@@ -7,4 +7,4 @@ app.jinja_env.globals['static'] = (
     lambda filename: url_for('static', filename = filename)
 )
 
-import boilerapp.views
+import appFlask.views

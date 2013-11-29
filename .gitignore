@@ -3,5 +3,5 @@ venv
 *.pyc
 node_modules
 bower_components
-boilerapp/static/build
-boilerapp/static/dev/js/jquery.js
+appFlask/static/build
+appFlask/static/libs

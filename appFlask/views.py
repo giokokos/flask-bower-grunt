@@ -1,5 +1,5 @@
 from flask import render_template
-from boilerapp import app
+from appFlask import app
 
 @app.route('/')
 def index():

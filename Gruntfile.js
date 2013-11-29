@@ -6,7 +6,7 @@ module.exports = function(grunt) {
     //specify an alternate install location for Bower
     bower: {
       dev: {
-        dest: 'boilerapp/static/dev/js'
+        dest: 'appFlask/static/libs'
       }
     },
 
@@ -18,8 +18,8 @@ module.exports = function(grunt) {
                 '<%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
       build: {
-        src: 'boilerapp/static/dev/js/*.js',
-        dest: 'boilerapp/static/build/js/all.min.js',
+        src: ['appFlask/static/src/js/*.js', 'appFlask/static/libs/*.js'],
+        dest: 'appFlask/static/build/js/all.min.js',
         options: {
           stripJsAffix: true
         }
