@@ -18,7 +18,7 @@ module.exports = function(grunt) {
                 '<%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
       build: {
-        src: ['appFlask/static/src/js/*.js', 'appFlask/static/libs/*.js'],
+        src: ['appFlask/static/libs/jquery.js', 'appFlask/static/libs/bootstrap.js', 'appFlask/static/src/js/*.js'],
         dest: 'appFlask/static/build/js/all.min.js',
         options: {
           stripJsAffix: true
