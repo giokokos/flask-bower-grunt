@@ -8,6 +8,8 @@ module.exports = function (grunt) {
 
     // Project configuration.
     grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
+
         //specify an alternate install location for Bower
         bower: {
             dev: {
@@ -15,8 +17,14 @@ module.exports = function (grunt) {
             }
         },
 
+        watch: {
+            files: [
+                'flaskapp/**/assets/js/*.js',
+            ],
+            tasks: ['bower', 'uglify']
+        },
+
         // minification of the .js files
-        pkg: grunt.file.readJSON('package.json'),
         uglify: {
             options: {
                 banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
