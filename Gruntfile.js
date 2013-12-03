@@ -1,38 +1,37 @@
-module.exports = function(grunt) {
+'use strict';
 
-  // Project configuration.
-  grunt.initConfig({
+module.exports = function (grunt) {
+    // show elapsed time at the end
+    require('time-grunt')(grunt);
+    // load all grunt tasks
+    require('load-grunt-tasks')(grunt);
 
-    //specify an alternate install location for Bower
-    bower: {
-      dev: {
-        dest: 'appFlask/static/libs'
-      }
-    },
+    // Project configuration.
+    grunt.initConfig({
+        //specify an alternate install location for Bower
+        bower: {
+            dev: {
+                dest: 'flaskapp/base/static/libs'
+            }
+        },
 
-    // minification of the .js files
-    pkg: grunt.file.readJSON('package.json'),
-    uglify: {
-      options: {
-        banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
-                '<%= grunt.template.today("yyyy-mm-dd") %> */\n'
-      },
-      build: {
-        src: ['appFlask/static/libs/jquery.js', 'appFlask/static/libs/bootstrap.js', 'appFlask/static/src/js/*.js'],
-        dest: 'appFlask/static/build/js/all.min.js',
-        options: {
-          stripJsAffix: true
+        // minification of the .js files
+        pkg: grunt.file.readJSON('package.json'),
+        uglify: {
+            options: {
+                banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
+                    '<%= grunt.template.today("yyyy-mm-dd") %> */\n'
+            },
+            build: {
+                src: ['flaskapp/base/static/libs/jquery.js', 'flaskapp/base/static/libs/bootstrap.js', 'flaskapp/base/assets/js/*.js', 'flaskapp/module1/assets/js/*.js', 'flaskapp/module2/assets/js/*.js'],
+                dest: 'flaskapp/base/static/build/js/all.min.js',
+                options: {
+                    stripJsAffix: true
+                }
+            }
         }
-      }
-    }
-  });
+    });
 
-  // Load the plugin that provides the "uglify" task.
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  // Load the plugin that provides the "bower" task.
-  grunt.loadNpmTasks('grunt-bower');
-
-  // Default task(s).
-  grunt.registerTask('default', ['bower', 'uglify']);
-
+    // Default task(s).
+    grunt.registerTask('default', ['bower', 'uglify']);
 };
