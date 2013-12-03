@@ -1,3 +1,4 @@
-from appFlask import app
+from flaskapp.base import create_app
 
-app.run(debug = True)
+app = create_app()
+app.run(debug=True)
