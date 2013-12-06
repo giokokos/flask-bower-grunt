@@ -3,5 +3,5 @@ venv
 *.pyc
 node_modules
 bower_components
-flaskapp/static/build
-flaskapp/static/libs
+flaskapp/base/static/build
+flaskapp/base/static/libs
