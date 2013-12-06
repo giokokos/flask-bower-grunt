@@ -1,5 +1,5 @@
-function test_function() {
+var mod2 = function test_function() {
     console.log("Test module 2");
 }
 
-testFunction();
+mod2();
