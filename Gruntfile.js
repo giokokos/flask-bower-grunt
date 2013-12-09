@@ -6,11 +6,11 @@ module.exports = function (grunt) {
     // load all grunt tasks
     require('load-grunt-tasks')(grunt);
 
-    // Project configuration.
+    // Project configuration
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
-        //specify an alternate install location for Bower
+        // specify an alternate install location for Bower
         bower: {
             dev: {
                 dest: 'flaskapp/base/static/libs'
@@ -37,9 +37,26 @@ module.exports = function (grunt) {
                     stripJsAffix: true
                 }
             }
+        },
+
+        // jshint
+        jshint: {
+          all: ['Gruntfile.js', 'flaskapp/**/assets/js/*.js']
+        },
+
+        // copy modules assets under /static/assets
+        copy: {
+            all: {
+                expand: true,
+                cwd: 'flaskapp/',
+                src: ['module1/assets/**/*.js', 'module1/assets/**/*.css'
+                     ,'module2/assets/**/*.js', 'module2/assets/**/*.css'],
+                dest: 'flaskapp/base/static/assets/'
+            }
         }
+
     });
 
-    // Default task(s).
-    grunt.registerTask('default', ['bower', 'uglify']);
+    // Default task(s)
+    grunt.registerTask('default', ['bower', 'uglify', 'copy']);
 };

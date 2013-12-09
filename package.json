@@ -9,6 +9,7 @@
     "grunt-bower": "0.7.0",
     "grunt-contrib-watch": "~0.5.3",
     "load-grunt-tasks": "~0.2.0",
-    "time-grunt": "~0.2.3"
+    "time-grunt": "~0.2.3",
+    "grunt-contrib-copy": "~0.4.1"
   }
 }
