@@ -13,13 +13,13 @@ module.exports = function (grunt) {
         // specify an alternate install location for Bower
         bower: {
             dev: {
-                dest: 'flaskapp/base/static/libs'
+                dest: 'base/static/libs'
             }
         },
 
         watch: {
             files: [
-                'flaskapp/**/assets/js/*.js',
+                '**/assets/js/*.js',
             ],
             tasks: ['bower', 'uglify']
         },
@@ -31,8 +31,8 @@ module.exports = function (grunt) {
                     '<%= grunt.template.today("yyyy-mm-dd") %> */\n'
             },
             build: {
-                src: ['flaskapp/base/static/libs/jquery.js', 'flaskapp/base/static/libs/bootstrap.js', 'flaskapp/base/assets/js/*.js', 'flaskapp/module1/assets/js/*.js', 'flaskapp/module2/assets/js/*.js'],
-                dest: 'flaskapp/base/static/build/js/all.min.js',
+                src: ['base/static/libs/jquery.js', 'base/static/libs/bootstrap.js', 'base/assets/js/*.js', 'module1/assets/js/*.js', 'module2/assets/js/*.js'],
+                dest: 'base/static/build/js/all.min.js',
                 options: {
                     stripJsAffix: true
                 }
@@ -41,17 +41,17 @@ module.exports = function (grunt) {
 
         // jshint
         jshint: {
-          all: ['Gruntfile.js', 'flaskapp/**/assets/js/*.js']
+          all: ['Gruntfile.js', '**/assets/js/*.js']
         },
 
         // copy modules assets under /static/assets
         copy: {
             all: {
                 expand: true,
-                cwd: 'flaskapp/',
+                //cwd: 'flaskapp/',
                 src: ['module1/assets/**/*.js', 'module1/assets/**/*.css'
                      ,'module2/assets/**/*.js', 'module2/assets/**/*.css'],
-                dest: 'flaskapp/base/static/assets/'
+                dest: 'base/static/assets/'
             }
         }
 
